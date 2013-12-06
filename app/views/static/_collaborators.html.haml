@@ -1,10 +1,10 @@
 %section
   %h3=t("collaborators.title")
-  .row-fluid.clearfix
+  .row.clearfix
     - users.each_slice(4) do |row|
-      %ul.thumbnails
+      %ul.img-thumbnails
         - row.each do |user|
-          %li.thumbnail.collaborator.span3
+          %li.img-thumbnail.collaborator.col-md-3
             = link_to image_tag(gravatar_url(user.gravatar_id, 200), :width => 200, :alt => user.nickname).html_safe, user.github_profile, target: '_blank'
             .caption
               %p

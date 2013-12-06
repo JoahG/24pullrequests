@@ -54,7 +54,7 @@ Github site: http://github.com/razorjack/quicksand
             var destHeight;
             var adjustHeightOnCallback = false;
             
-            var offset = $($sourceParent).offset(); // offset of visible container, used in animation calculations
+            var offset = $($sourceParent).col-md-offset-(); // offset of visible container, used in animation calculations
             var offsets = []; // coordinates of every source collection item            
             
             var $source = $(this).find(options.selector); // source collection items
@@ -90,8 +90,8 @@ Github site: http://github.com/razorjack/quicksand
             };
             
             // Position: relative situations
-            var $correctionParent = $sourceParent.offsetParent();
-            var correctionOffset = $correctionParent.offset();
+            var $correctionParent = $sourceParent.col-md-offset-Parent();
+            var correctionOffset = $correctionParent.col-md-offset-();
             if ($correctionParent.css('position') == 'relative') {
                 if ($correctionParent.get(0).nodeName.toLowerCase() == 'body') {
 
@@ -122,7 +122,7 @@ Github site: http://github.com/razorjack/quicksand
             
             // get positions of source collections
             $source.each(function (i) {
-                offsets[i] = $(this).offset();
+                offsets[i] = $(this).col-md-offset-();
             });
             
             // stops previous animations on source container
@@ -211,8 +211,8 @@ Github site: http://github.com/razorjack/quicksand
                                             {
                                                 element: $(this), 
                                                 animation: 
-                                                    {top: destElement.offset().top - correctionOffset.top, 
-                                                     left: destElement.offset().left - correctionOffset.left, 
+                                                    {top: destElement.col-md-offset-().top - correctionOffset.top, 
+                                                     left: destElement.col-md-offset-().left - correctionOffset.left, 
                                                      opacity: 1.0
                                                     }
                                             });
@@ -220,8 +220,8 @@ Github site: http://github.com/razorjack/quicksand
                     } else {
                         animationQueue.push({
                                             element: $(this), 
-                                            animation: {top: destElement.offset().top - correctionOffset.top, 
-                                                        left: destElement.offset().left - correctionOffset.left, 
+                                            animation: {top: destElement.col-md-offset-().top - correctionOffset.top, 
+                                                        left: destElement.col-md-offset-().left - correctionOffset.left, 
                                                         opacity: 1.0, 
                                                         scale: '1.0'
                                                        }
@@ -284,8 +284,8 @@ Github site: http://github.com/razorjack/quicksand
                     var rawDestElement = d.get(0);
                     rawDestElement.style.position = 'absolute';
                     rawDestElement.style.margin = '0';
-                    rawDestElement.style.top = destElement.offset().top - correctionOffset.top + 'px';
-                    rawDestElement.style.left = destElement.offset().left - correctionOffset.left + 'px';
+                    rawDestElement.style.top = destElement.col-md-offset-().top - correctionOffset.top + 'px';
+                    rawDestElement.style.left = destElement.col-md-offset-().left - correctionOffset.left + 'px';
                     d.css('opacity', 0.0); // IE
                     if (options.useScaling) {
                         d.css('transform', 'scale(0.0)');

@@ -55,7 +55,7 @@
         = link_to image_tag('logo.png'), root_path
 
       - if params[:action] == 'homepage'
-        .tagline.hidden-phone
+        .tagline.hidden-sm
 
       .locale
         .dropdown
@@ -76,17 +76,17 @@
     - if logged_in?
       = render :partial => 'user_nav'
 
-    %article
-      .container-fluid
-        .row-fluid
-          .span12
-            - if flash.any?
-              .messages
-                - if flash[:alert]
-                  .alert= flash[:alert]
-                - if flash[:notice]
-                  .alert.alert-info= flash[:notice]
-            = yield
+
+    .container
+      .row
+        .col-md-12
+          - if flash.any?
+            .messages
+              - if flash[:alert]
+                .alert= flash[:alert]
+              - if flash[:notice]
+                .alert.alert-info= flash[:notice]
+          = yield
 
   %footer
     .dark

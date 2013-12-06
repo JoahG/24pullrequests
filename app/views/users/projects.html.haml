@@ -1,7 +1,7 @@
 %h3 My Suggestions
 %hr
 
-#projects.row-fluid
+#projects.row
   - if @projects.any?
     = render partial: 'projects/editable_project', collection:  @projects, as: :project, locals: { admin: false }
   - else

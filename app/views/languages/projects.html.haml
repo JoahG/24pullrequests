@@ -1,9 +1,9 @@
-#projects.row-fluid.clearfix
+#projects.row.clearfix
   %h3
     = t("language.projects.count", count: project_count_for_language, language: @language)
     = link_to t("language.projects.suggest", language: @language), new_project_path(language: @language), :class => 'btn pull-right'
 
-  .row-fluid.clearfix
-    .span12
+  .row.clearfix
+    .col-md-12
       = render @projects
     = paginate @projects

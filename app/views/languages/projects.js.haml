@@ -2,7 +2,7 @@
   (function($projects) {
     var $new = $("#{escape_javascript(render(@projects))}");
 
-    $projects.find('.span12')
+    $projects.find('.col-md-12')
       .html($new)
 
     $(".more")

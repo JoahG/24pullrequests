@@ -19,11 +19,11 @@
       = language_link language, language
 %hr
 - if @has_more_projects
-  #projects.row-fluid
-    %div.span12
+  #projects.row
+    %div.col-md-12
       = render @projects
-  %div#someprojects.row-fluid
-    %div.span12
+  %div#someprojects.row
+    %div.col-md-12
       = link_to_next_page @projects, t("more"), remote: true, class: 'btn btn-success more'
 
 #noprojects
