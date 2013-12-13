@@ -4,7 +4,7 @@ class OrganisationsController < ApplicationController
   respond_to :js, only: :index
 
   def index
-    @organisations = Organisation.order('pull_requests_count desc').includes(:users).page params[:page]
+    @organisations = Kaminari.paginate_array(Organisation.all.sort{|a,b| a.pull_request_count <=> b.pull_request_count}.reverse).page(params[:page])
     respond_with @organisations
   end
 
